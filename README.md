@@ -1,2 +1,2 @@
 # Nui
- A simple code library for Godot.
+ A simple UI code library for Godot.
