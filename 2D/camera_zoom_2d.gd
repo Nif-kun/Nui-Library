@@ -6,7 +6,7 @@ var action_zoom_in : String #The name or id of the input action for zooming in, 
 var action_zoom_out: String #The name or id of the input action for zooming out, typically the down mouse wheel.
 var zoom_range : PoolVector2Array = [Vector2(0.125,0.125), Vector2(4,4)] #The min and max range of zooming.
 var zoom_rate := Vector2(0.125, 0.125) #The rate of zooming in or out.
-var cursor_zoom := true #Condition if zooming will move towards the cursor.
+var cursor_zoom := false #Condition if zooming will move towards the cursor.
 var _state = zoom_state.NONE #The state of zooming, e.g. zooming in or out. Defaults to NONE.
 enum zoom_state {
 	NONE = 0,
@@ -15,7 +15,7 @@ enum zoom_state {
 }
 
 #Sets initial values.
-func _init(camera:Camera2D, zoom_in_action:String, zoom_out_action:String, zoom_on_cursor:=true, 
+func _init(camera:Camera2D, zoom_in_action:String, zoom_out_action:String, zoom_on_cursor:=false, 
 rate:=0.0625, min_zoom:=0.0625, max_zoom:=4.0):
 	camera_ref = camera
 	action_zoom_in = zoom_in_action
